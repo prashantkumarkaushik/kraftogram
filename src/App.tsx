@@ -1,16 +1,29 @@
-import { useRecoilValue } from "recoil";
-import { menuState } from "./atoms/hamburgerAtom";
-import DrawerDemo from "./Components/DrawerDemo";
-import Navbar from "./Components/Navbar";
-import Sidebar from "./Components/Sidebar";
-import SidebarSm from "./Components/SidebarSm";
+import { Fragment } from "react";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+import Post from "./Components/Posts/Post";
+import PostSection from "./Components/Posts/PostSection";
 import Home from "./Pages/Home";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Home />}>
+      <Route index element={<PostSection />} />
+      <Route path="/:id" element={<Post />} />
+    </Route>
+  )
+);
 
 function App() {
   return (
-    <>
-      <Home />
-    </>
+    <Fragment>
+      <div>Hello world</div>
+      {/* <RouterProvider router={router} /> */}
+    </Fragment>
   );
 }
 

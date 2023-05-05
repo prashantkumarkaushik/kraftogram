@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
-import Post from "./Post";
+import Posts from "./Posts";
 const PostSection = () => {
   const postData = [
     {
@@ -103,7 +103,7 @@ const PostSection = () => {
   ];
 
   return (
-    <Box mt="75px" mx='65px'>
+    <Box mt="75px" mx="65px">
       <Text
         m={4}
         fontWeight={700}
@@ -114,9 +114,9 @@ const PostSection = () => {
       >
         Posts
       </Text>
-      <Flex mx="55px" wrap="wrap" gap={4} justify='center'>
+      <Flex mx="30px" wrap="wrap" gap={4} justify="center">
         {postData.map((post) => (
-          <Post id={post.id} postUrl={post.postUrl} userImg={post.userImg} />
+          <Posts id={post.id} postUrl={post.postUrl} userImg={post.userImg} />
         ))}
       </Flex>
     </Box>
