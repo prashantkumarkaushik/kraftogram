@@ -11,9 +11,9 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <Flex>
-        <Flex>{isOpen ? <Sidebar /> : <SidebarSm />}</Flex>
-      </Flex>
+      {/* <Flex> */}
+      {/*   <Flex>{isOpen ? <Sidebar /> : <SidebarSm />}</Flex> */}
+      {/* </Flex> */}
       <main>
         <Outlet />
       </main>

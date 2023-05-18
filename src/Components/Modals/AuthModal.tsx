@@ -55,7 +55,7 @@ const AuthModal = () => {
             >
               {authState.view === "login" || authState.view === "signup" ? (
                 <>
-                  <OAuthButtons />
+                  {/* <OAuthButtons /> */}
                   <Text color="gray.500" fontWeight={700}>
                     OR
                   </Text>

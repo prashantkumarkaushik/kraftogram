@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { BsFillHeartFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 type PostProps = {
   id: number;
@@ -17,11 +18,14 @@ type PostProps = {
   userImg: string;
 };
 
-const Posts: React.FC<PostProps> = ({ postUrl, userImg }) => {
+const Posts: React.FC<PostProps> = ({ postUrl, userImg, id }) => {
   const [liked, setLiked] = useState<Boolean>(false);
   function handleClick() {
     setLiked(!liked);
   }
+
+  const navigate = useNavigate();
+
   return (
     <Card w="275px" h="300px" variant="filled" rounded="lg">
       <Box overflow="hidden" roundedTop="lg" height="400px">
@@ -33,6 +37,11 @@ const Posts: React.FC<PostProps> = ({ postUrl, userImg }) => {
           alt="Chakra UI"
           height="250px"
           width="275px"
+          onClick={() =>
+            navigate(`/${id}`, {
+              state: { id: id, postUrl: postUrl, userImg: userImg },
+            })
+          }
           _hover={{
             transform: "scale(1.1)",
             transition: "all 0.8s ease-in-out",

@@ -2,8 +2,10 @@ import { FaHome, FaFire } from "react-icons/fa";
 import { MdVideoLibrary } from "react-icons/md";
 import { IoTimerSharp } from "react-icons/io5";
 import { Flex, Stack, Icon, Text } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+  const navigate = useNavigate()
   return (
     <>
       <Flex
@@ -24,6 +26,7 @@ const Sidebar = () => {
         >
           <Flex
             gap={2}
+            onClick={() => navigate('/')}
             align="center"
             p={1}
             _hover={{ background: "gray.400", color: "background" }}
