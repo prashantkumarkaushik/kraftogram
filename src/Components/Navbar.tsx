@@ -5,6 +5,7 @@ import {
   SignInButton,
   useAuth,
   useClerk,
+  UserButton,
   UserProfile,
   useUser,
 } from "@clerk/clerk-react";
@@ -132,11 +133,11 @@ const Navbar = () => {
               </SignInButton>
             </SignedOut>
             <SignedIn>
-              {/* <UserProfile /> */}
-              <Button onClick={() => navigate("/user")}>User</Button>
-              <Button background="gray.200" onClick={() => signOut()}>
-                SignOut
-              </Button>
+              <UserButton />
+              {/* <Button onClick={() => navigate("/user")}>User</Button> */}
+              {/* <Button background="gray.200" onClick={() => signOut()}> */}
+              {/*   SignOut */}
+              {/* </Button> */}
             </SignedIn>
           </Flex>
         </Flex>

@@ -7,16 +7,21 @@ const Post = () => {
   const obj = {
     postUrl: location.state.postUrl,
     userImg: location.state.userImg,
+    postTitle: location.state.postTitle,
+    postLikes: location.state.postLikes,
+    userName: location.state.userName,
   };
   return (
     <>
       <Box ml="80px" pt="73px">
         <Box>
           <Image
-            width="100%"
+            width="60%"
             src={obj.postUrl}
-            height="75vh"
-            marginBottom="2px"
+            height="500px"
+            marginLeft="20%"
+            marginBottom="5px"
+            borderRadius="10px"
           />
           <Flex
             justifyContent="center"
@@ -28,8 +33,8 @@ const Post = () => {
             margin="auto"
             gap={20}
           >
-            <Text fontSize="xl" fontWeight="600">
-              Title of the post
+            <Text fontSize="xl" fontWeight="600" color="black.400">
+              {obj.postTitle}
             </Text>
             <Image
               border="2px"
@@ -41,7 +46,7 @@ const Post = () => {
             />
             <Flex justifyContent="content" alignItems="center" gap={2}>
               <Icon as={BsFillHeartFill} color="gray.400" />
-              <Text>24</Text>
+              <Text>{obj.postLikes}</Text>
             </Flex>
           </Flex>
         </Box>
